@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abi & Charlie 💖</title>
+    <style>
+        body {
+            background-color: #ffe6f0;
+            font-family: 'Comic Sans MS', cursive;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            color: #ff4da6;
+            font-size: 3rem;
+            margin-top: 30px;
+        }
+        p {
+            color: #660033;
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: auto;
+        }
+        .corazones {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+        .corazon {
+            position: absolute;
+            color: #ff4da6;
+            font-size: 24px;
+            animation: flotar 8s linear infinite;
+        }
+        @keyframes flotar {
+            from { transform: translateY(100vh); opacity: 1; }
+            to { transform: translateY(-10vh); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <h1>Abi & Charlie 💖</h1>
+    <p>Desde el 30 de Julio, nuestras vidas se unieron en una historia tan bonita que ni los libros podrían contar 💌✨</p>
+
+    <div class="corazones" id="corazones"></div>
+
+    <script>
+        function crearCorazon() {
+            const corazon = document.createElement("div");
+            corazon.classList.add("corazon");
+            corazon.textContent = "💖";
+            corazon.style.left = Math.random() * 100 + "vw";
+            corazon.style.animationDuration = (Math.random() * 3 + 5) + "s";
+            document.getElementById("corazones").appendChild(corazon);
+            setTimeout(() => corazon.remove(), 8000);
+        }
+        setInterval(crearCorazon, 300);
+    </script>
+</body>
+</html>
